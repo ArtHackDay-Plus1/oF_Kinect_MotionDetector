@@ -36,7 +36,7 @@ void ofApp::draw(){
     kinect.drawDepth(0, 0, ofGetWidth()/2, ofGetHeight());
     
     int maxX = 0;
-    int maxY = 0;
+    int maxY = ofGetHeight();
     
     ofSetColor(100, 200, 100);
     for (int x = 0; x < ofGetWidth()/2; x++) {
@@ -46,7 +46,7 @@ void ofApp::draw(){
             if (maxX < scrX) {
                 maxX = scrX;
             }
-            if (maxY < scrY) {
+            if (maxY > scrY) {
                 maxY = scrY;
             }
         }
